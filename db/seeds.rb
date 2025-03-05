@@ -1,3 +1,4 @@
+puts 'Seeding database...'
 [
   { name: 'frog', level: 1, group: :amphibian, habitat: :land },
   { name: 'spider', level: 2, group: :arachnid, habitat: :land },
@@ -13,6 +14,11 @@
   Animal.find_or_create_by!(animal)
 end
 
+puts "#{Animal.count} animals created!"
+
 if Rails.env.development?
-  Game.find_or_create_by!(name: 'foobar')
+  game = Game.find_or_create_by!(name: 'foobar')
+  puts "Game #{game.name} created!"
+  game.animals = Animal.where(level: 1)
+  puts "#{game.animals.count} animals added to game #{game.name}!"
 end
