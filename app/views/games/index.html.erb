@@ -1,0 +1,5 @@
+<%= link_to 'New Game', new_game_path %>
+<%= form_with url: game_path, method: :get do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Search' %>
+<% end %>
