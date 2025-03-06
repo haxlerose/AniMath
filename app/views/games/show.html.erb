@@ -1,1 +1,30 @@
-GAME PLAY
+<div class="flex flex-col">
+  <%= tag.div "LEVEL #{@animal.level}", class: 'mb-8 text-3xl font-semibold self-center' %>
+  <%= render 'animals/owned_animal', animal: @animal %>
+
+  <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-3xl font-semibold mt-8' %>
+
+  <%= form_with url: guess_path(@game), html: { id: "guess_form" } do %>
+    <%= hidden_field_tag :sum, @puzzle[:sum] %>
+    <%= hidden_field_tag :game_id, @game.id %>
+    <%= hidden_field_tag :animal_id, @animal.id %>
+
+    <div class="flex flex-wrap gap-3 my-4">
+      <% @puzzle[:answers].each do |answer| %>
+        <div class="relative">
+          <%= radio_button_tag :guess, answer, false,
+              class: "absolute opacity-0 w-full h-full cursor-pointer peer",
+              onchange: "this.form.submit();" %>
+          <%= label_tag "guess_#{answer}", answer,
+              class: "block px-4 py-2 border rounded-full peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-700 peer-hover:bg-gray-100 cursor-pointer transition-colors text-xl" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="alert mt-4">
+    <% if flash[:alert] %>
+      <%= flash[:alert] %>
+    <% end %>
+  </div>
+</div>

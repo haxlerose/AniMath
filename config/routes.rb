@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'games#index'
 
-  resources :games, only: %i[index new create]
-  get 'game' => 'games#show', as: :game
+  resources :games, only: %i[index new create show]
+  post 'games/:id/guess', to: 'games#guess', as: :guess
+  post 'search', to: 'games#search', as: :search
+
+  get 'games/:id/animals', to: 'animals#index', as: :animals
 end

@@ -23,6 +23,6 @@ class PuzzleGenerator
       wrong_answer = rand(1..sum + 5)
       answers << wrong_answer if answers.exclude?(wrong_answer)
     end
-    answers
+    answers.shuffle
   end
 end
