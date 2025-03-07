@@ -270,7 +270,7 @@ seagull,2,air,bird
 seahorse,5,sea,fish
 seal,5,sea,mammal
 shark,4,sea,fish
-sheep,3,land,mammal
+sheep,1,land,mammal
 shrew,2,land,mammal
 shrimp,3,sea,fish
 skunk,3,land,mammal
