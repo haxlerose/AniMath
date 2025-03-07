@@ -42,7 +42,7 @@ class GamesController < ApplicationController
       @game.animals << @animal
       redirect_to game_path(@game)
     else
-      redirect_to game_path(@game), alert: 'Incorrect answer'
+      redirect_to game_path(@game)
     end
   end
 

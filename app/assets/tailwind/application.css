@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@keyframes correctAnswer {
+  0%, 100% {
+    border-color: theme('colors.green.500');
+    background-color: theme('colors.green.300');
+  }
+  50% {
+    border-color: theme('colors.green.700');
+    background-color: theme('colors.green.500');
+    color: white;
+  }
+}
+
+@keyframes incorrectAnswer {
+  0%, 100% {
+    border-color: theme('colors.red.500');
+    background-color: theme('colors.red.300');
+  }
+  50% {
+    border-color: theme('colors.red.700');
+    background-color: theme('colors.red.500');
+    color: white;
+  }
+}
+
+.correct-answer label {
+  animation: correctAnswer 3.0s ease;
+  border-color: theme('colors.green.500');
+  background-color: theme('colors.green.100');
+}
+
+.incorrect-answer label {
+  animation: incorrectAnswer 3.0s ease;
+  border-color: theme('colors.red.500');
+  background-color: theme('colors.red.100');
+}
