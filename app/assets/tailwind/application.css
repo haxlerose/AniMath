@@ -1,14 +1,20 @@
 @import "tailwindcss";
 
+/* Add this to your application.css or a dedicated CSS file */
+
 @keyframes correctAnswer {
   0%, 100% {
     border-color: theme('colors.green.500');
     background-color: theme('colors.green.300');
   }
-  50% {
+  16.67%, 50%, 83.33% {
     border-color: theme('colors.green.700');
     background-color: theme('colors.green.500');
     color: white;
+  }
+  33.33%, 66.67% {
+    border-color: theme('colors.green.500');
+    background-color: theme('colors.green.300');
   }
 }
 
@@ -17,21 +23,25 @@
     border-color: theme('colors.red.500');
     background-color: theme('colors.red.300');
   }
-  50% {
+  16.67%, 50%, 83.33% {
     border-color: theme('colors.red.700');
     background-color: theme('colors.red.500');
     color: white;
+  }
+  33.33%, 66.67% {
+    border-color: theme('colors.red.500');
+    background-color: theme('colors.red.300');
   }
 }
 
 .correct-answer label {
   animation: correctAnswer 3.0s ease;
   border-color: theme('colors.green.500');
-  background-color: theme('colors.green.100');
+  background-color: theme('colors.green.300');
 }
 
 .incorrect-answer label {
   animation: incorrectAnswer 3.0s ease;
   border-color: theme('colors.red.500');
-  background-color: theme('colors.red.100');
+  background-color: theme('colors.red.300');
 }
