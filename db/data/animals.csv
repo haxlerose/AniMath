@@ -23,7 +23,7 @@ baryonyx,4,land,reptile
 bass,3,sea,fish
 bat,5,air,mammal
 beagle,4,land,mammal
-bear,2,land,mammal
+bear,1,land,mammal
 beaver,4,land,mammal
 bee,1,air,insect
 beetle,2,land,insect
@@ -101,7 +101,7 @@ firefly,5,air,insect
 flamingo,1,land,bird
 flea,2,land,insect
 flounder,2,sea,fish
-fly,1,air,insect
+fly,5,air,insect
 fox,5,land,mammal
 frog,1,land,amphibian
 gadfly,1,air,insect
@@ -113,7 +113,6 @@ gibbon,5,land,mammal
 giganotosaurus,4,land,reptile
 giraffe,5,land,mammal
 gnat,4,air,insect
-gnu,3,land,mammal
 goat,1,land,mammal
 godzilla,6,land,reptile
 goldfinch,4,air,bird
@@ -122,6 +121,7 @@ goose,3,air,bird
 gopher,3,land,mammal
 gorilla,2,land,mammal
 grasshopper,3,land,insect
+grizzly,4,land,mammal
 grouse,2,air,bird
 gull,2,air,bird
 guppy,3,sea,fish
@@ -305,10 +305,12 @@ viper,4,land,reptile
 vulture,3,air,bird
 wallaby,4,land,mammal
 walrus,1,sea,mammal
+warthog,2,land,mammal
 wasp,2,air,insect
 weasel,3,land,mammal
 whale,4,sea,mammal
 wildcat,4,land,mammal
+wildebeest,3,land,mammal
 wolf,5,land,mammal
 wolverine,5,land,mammal
 wombat,4,land,mammal
