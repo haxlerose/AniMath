@@ -41,6 +41,7 @@ bullfrog,3,land,amphibian
 bumblebee,4,air,insect
 butterfly,5,air,insect
 buzzard,2,air,bird
+caiman,4,land,reptile
 camel,4,land,mammal
 capybara,5,land,mammal
 caribou,3,land,mammal
@@ -52,6 +53,7 @@ catfish,3,sea,fish
 centipede,2,land,insect
 chameleon,5,land,reptile
 charizard,6,air,reptile
+charmander,6,land,reptile
 cheetah,5,land,mammal
 chicken,1,land,bird
 chimera,6,land,mammal
@@ -83,12 +85,14 @@ dolphin,4,sea,mammal
 donkey,3,land,mammal
 dove,3,air,bird
 dragon,6,land,reptile
+dragonite,6,air,reptile
 dragonfly,4,land,insect
 duck,3,air,bird
 dormouse,3,land,mammal
 eagle,4,air,bird
 earwig,3,land,insect
 eel,3,sea,fish
+eevee,6,land,mammal
 egret,4,air,bird
 elephant,5,land,mammal
 elk,4,land,mammal
@@ -108,6 +112,7 @@ gadfly,1,air,insect
 gallimimus,3,land,reptile
 gazelle,4,land,mammal
 gecko,4,land,reptile
+gengar,6,land,mammal
 gerbil,3,land,mammal
 gibbon,5,land,mammal
 giganotosaurus,4,land,reptile
@@ -125,6 +130,7 @@ grizzly,4,land,mammal
 grouse,2,air,bird
 gull,2,air,bird
 guppy,3,sea,fish
+gyrados,6,sea,fish
 haddock,2,sea,fish
 halibut,3,sea,fish
 hamster,4,land,mammal
@@ -150,6 +156,7 @@ jackrabbit,2,land,mammal
 jaguar,5,land,mammal
 jay,3,air,bird
 jellyfish,4,sea,fish
+jigglypuff,6,land,mammal
 kangaroo,5,land,mammal
 kingfisher,4,air,bird
 kiwi,4,land,bird
@@ -181,6 +188,7 @@ marmot,3,land,mammal
 mastiff,4,land,mammal
 mayfly,2,air,insect
 meerkat,5,land,mammal
+meowth,6,land,mammal
 mewtwo,6,land,mammal
 mink,3,land,mammal
 minnow,2,sea,fish
@@ -192,7 +200,7 @@ monkey,2,land,mammal
 moose,5,land,mammal
 mosquito,1,air,insect
 moth,2,air,insect
-mouse,3,land,mammal
+mouse,1,land,mammal
 mule,3,land,mammal
 muskrat,2,land,mammal
 narwhal,3,sea,mammal
@@ -235,6 +243,7 @@ pony,4,land,mammal
 porcupine,4,land,mammal
 porpoise,4,sea,mammal
 prawn,2,sea,fish
+psyduck,6,air,bird
 pteranodon,4,air,reptile
 puffin,4,air,bird
 puma,5,land,mammal
@@ -267,6 +276,7 @@ shrimp,3,sea,fish
 skunk,3,land,mammal
 sloth,1,land,mammal
 snake,1,land,reptile
+snorlax,6,land,mammal
 sparrow,1,air,bird
 spider,1,land,arachnid
 spinosaurus,5,land,reptile
