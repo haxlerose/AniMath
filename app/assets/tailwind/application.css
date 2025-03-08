@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-/* Add this to your application.css or a dedicated CSS file */
-
 @keyframes correctAnswer {
   0%, 100% {
     border-color: theme('colors.green.500');
@@ -44,4 +42,47 @@
   animation: incorrectAnswer 3.0s ease;
   border-color: theme('colors.red.500');
   background-color: theme('colors.red.300');
+}
+
+/* Overlay for dimming the background */
+.collection-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  animation: fadeInOut 2.5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 0.5; }
+  80% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+/* Card collection animation */
+@keyframes cardGlow {
+  0% {
+    box-shadow: 0 0 5px theme('colors.yellow.300');
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px theme('colors.yellow.300'),
+                0 0 60px theme('colors.yellow.200');
+    transform: scale(1.1);
+    z-index: 20;
+  }
+  100% {
+    box-shadow: 0 0 5px theme('colors.yellow.300');
+    transform: scale(1);
+  }
+}
+
+.card-collected {
+  animation: cardGlow 2.5s ease;
+  position: relative;
+  z-index: 20;
 }
