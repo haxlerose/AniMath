@@ -1,4 +1,8 @@
-<%= form_with model: Game.new do |form| %>
-  <%= form.text_field :name %>
-  <%= form.submit 'Create' %>
-<% end %>
+<div class="flex flex-col">
+  <%= tag.h2 'New Game', class: 'text-xl font-semibold mb-4' %>
+
+  <%= form_with model: Game.new, class: 'flex' do |form| %>
+    <%= form.text_field :name, class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-600 focus:border-gray-800 block w-full p-2.5', placeholder: 'Enter game name' %>
+    <%= form.submit 'Play', class: 'ml-4 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-600 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center' %>
+  <% end %>
+</div>

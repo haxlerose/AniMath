@@ -32,7 +32,10 @@
           <a href="/games/<%= params[:id] %>/animals" class="text-white font-bold border p-2 rounded-lg">Set</a>
         </div>
       <% else %>
-        <%= link_to 'AniMath', root_path, class: 'text-white' %>
+        <div class="flex justify-between items-center text-2xl">
+          <a href="/" class="text-white font-bold border p-2 rounded-lg">Animath</a>
+          <a href="<%= new_game_path %>" class="text-white font-bold border p-2 rounded-lg">New Game</a>
+        </div>
       <% end %>
     </nav>
     <main class="mt-8 lg:mt-16 px-5 flex justify-center">
