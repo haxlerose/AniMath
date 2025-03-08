@@ -1,8 +1,8 @@
 <div class="flex flex-col">
-  <%= tag.div "LEVEL #{@animal.level}", class: 'mb-8 text-3xl font-semibold self-center' %>
+  <%= tag.div "LEVEL #{@animal.level}", class: 'mb-4 md:mb-8 text-3xl font-semibold self-center' %>
   <%= render 'animals/owned_animal', animal: @animal %>
 
-  <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-8 mb-6' %>
+  <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-4 md:mt-8 mb-4 md:mb-6' %>
 
   <%= form_with url: guess_path(@game), html: {
       id: "guess_form",
