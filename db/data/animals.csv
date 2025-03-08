@@ -110,7 +110,7 @@ fox,5,land,mammal
 frog,1,land,amphibian
 gadfly,1,air,insect
 gallimimus,3,land,reptile
-gazelle,4,land,mammal
+gazelle,1,land,mammal
 gecko,4,land,reptile
 gengar,6,land,mammal
 gerbil,3,land,mammal
@@ -130,7 +130,7 @@ grizzly,4,land,mammal
 grouse,2,air,bird
 gull,2,air,bird
 guppy,3,sea,fish
-gyrados,6,sea,fish
+gyarados,6,sea,fish
 haddock,2,sea,fish
 halibut,3,sea,fish
 hamster,1,land,mammal
@@ -142,10 +142,10 @@ herring,2,air,fish
 hippo,5,land,mammal
 hornet,2,air,insect
 horse,1,land,mammal
-hound,4,land,mammal
+hound,2,land,mammal
 hummingbird,5,air,bird
-husky,4,land,mammal
-hyena,4,land,mammal
+husky,3,land,mammal
+hyena,1,land,mammal
 ibex,4,land,mammal
 ibis,3,land,bird
 iguana,2,land,reptile
@@ -161,9 +161,10 @@ kangaroo,5,land,mammal
 kingfisher,4,air,bird
 kiwi,1,land,bird
 koala,5,land,mammal
+kong,6,land,mammal
 kraken,6,sea,fish
 krill,2,sea,fish
-ladybug,4,air,insect
+ladybug,1,air,insect
 lark,3,air,bird
 lemming,2,land,mammal
 lemur,5,land,mammal
@@ -176,7 +177,7 @@ locust,2,land,insect
 loon,3,sea,bird
 louse,1,land,insect
 lynx,4,land,mammal
-macaw,5,air,bird
+macaw,2,air,bird
 mackerel,2,sea,fish
 magpie,3,air,bird
 mallard,3,air,bird
@@ -313,7 +314,7 @@ unicorn,6,land,mammal
 velociraptor,5,land,reptile
 viper,4,land,reptile
 vulture,3,air,bird
-wallaby,4,land,mammal
+wallaby,1,land,mammal
 walrus,1,sea,mammal
 warthog,2,land,mammal
 wasp,2,air,insect
@@ -328,7 +329,7 @@ woodchuck,3,land,mammal
 woodlouse,1,land,arachnid
 woodpecker,4,air,bird
 wren,3,air,bird
-yak,4,land,mammal
+yak,1,land,mammal
 yellowjacket,4,air,insect
 yeti,6,land,mammal
 zebra,2,land,mammal
