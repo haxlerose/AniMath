@@ -26,19 +26,17 @@
   <body>
     <!-- -- NAVIGATION -- -->
     <nav class="bg-gray-800 text-white py-4 px-5 md:px-8 lg:px-16 xl:px-68 sticky top-0 z-50">
-      <% if params[:id].present? %>
-        <div class="flex justify-between items-center text-2xl">
+      <div class="flex justify-between items-center text-xl md:text-2xl">
+        <% if params[:id].present? %>
           <a href="/games/<%= params[:id] %>" class="text-white font-bold border p-2 rounded-lg">Play</a>
           <a href="/games/<%= params[:id] %>/animals" class="text-white font-bold border p-2 rounded-lg">Set</a>
-        </div>
-      <% else %>
-        <div class="flex justify-between items-center text-2xl">
+        <% else %>
           <a href="/" class="text-white font-bold border p-2 rounded-lg">Animath</a>
           <a href="<%= new_game_path %>" class="text-white font-bold border p-2 rounded-lg">New Game</a>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </nav>
-    <main class="mt-8 lg:mt-16 px-5 flex justify-center">
+    <main class="mt-4 md:mt-8 lg:mt-16 px-5 flex justify-center">
       <%= yield %>
     </main>
   </body>

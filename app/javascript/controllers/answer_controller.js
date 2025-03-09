@@ -7,10 +7,7 @@ export default class extends Controller {
     guess: Number
   }
 
-  connect() {
-    console.log("Answer controller connected")
-    console.log(this.guessValue)
-  }
+  connect() {}
 
   select(event) {
     const selectedAnswer = parseInt(event.currentTarget.value)
