@@ -2,9 +2,10 @@
     data: {
       controller: "answer",
       answer_correct_answer_value: @puzzle[:sum],
-      answer_target: "form"
+      answer_target: "form",
+      answer_guess_value: 1
     },
-    class: 'flex flex-col'
+    class: 'flex flex-col fade-in'
   } do %>
   <%= hidden_field_tag :sum, @puzzle[:sum] %>
   <%= hidden_field_tag :game_id, @game.id %>

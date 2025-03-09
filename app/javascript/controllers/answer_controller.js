@@ -3,11 +3,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["answer", "form", "animalCard"]
   static values = {
-    correctAnswer: Number
+    correctAnswer: Number,
+    guess: Number
   }
 
   connect() {
     console.log("Answer controller connected")
+    console.log(this.guessValue)
   }
 
   select(event) {
@@ -33,13 +35,27 @@ export default class extends Controller {
           }, 2500)
         }
       }, 1000) // Start card animation after 1s (during the answer animation)
+
+      setTimeout(() => {
+        this.formTarget.requestSubmit()
+      }, 3000)
     } else {
       // Incorrect answer animation
       answerElement.classList.add("incorrect-answer")
-    }
 
-    setTimeout(() => {
-      this.formTarget.requestSubmit()
-    }, 3000)
+      if (this.guessValue === 2) {
+        this.answerTargets.forEach((answer) => {
+          if (parseInt(answer.value) === this.correctAnswerValue) {
+            answer.disabled = true
+          }
+        })
+
+        setTimeout(() => {
+          this.formTarget.requestSubmit()
+        }, 3000)
+      } else {
+        this.guessValue += 1
+      }
+    }
   }
 }
