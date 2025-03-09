@@ -81,18 +81,13 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: animath_production
-    username: animath
-    password: <%= ENV["ANIMATH_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: animath_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: animath_production_queue
-    migrations_paths: db/queue_migrate
+    url: <%= ENV['DATABASE_URL'] %>
   cable:
-    <<: *primary_production
-    database: animath_production_cable
-    migrations_paths: db/cable_migrate
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+  cache:
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+  queue:
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
