@@ -11,9 +11,7 @@
         <% if @owned_animals.include?(animal) %>
           <div data-controller="modal">
             <div data-action="click->modal#show">
-              <turbo-frame id="owned_animal_<%= animal.id %>">
-                <%= render 'owned_animal', animal: animal %>
-              </turbo-frame>
+              <%= render 'owned_animal', animal: animal %>
             </div>
             <div class="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none" data-modal-target="overlay">
               <!-- Dark overlay -->
@@ -28,9 +26,7 @@
             </div>
           </div>
         <% else %>
-          <turbo-frame id="unowned_animal_<%= animal.id %>">
-            <%= render 'unowned_animal', animal: animal %>
-          </turbo-frame>
+          <%= render 'unowned_animal', animal: animal %>
         <% end %>
       <% end %>
     </div>
