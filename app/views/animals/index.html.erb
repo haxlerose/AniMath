@@ -1,38 +1,38 @@
 <div class="flex flex-col">
-<% @animals.each do |level, animals| %>
-  <div class="flex mb-4">
-    <% level.times do %>
-      <%= image_tag "svg/star.svg", size: '64' %>
-    <% end %>
-  </div>
+  <% @animals.each do |level, animals| %>
+    <div class="flex mb-4">
+      <% level.times do %>
+        <%= image_tag "svg/star.svg", size: '64' %>
+      <% end %>
+    </div>
 
-  <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mb-12">
-    <% animals.each do |animal| %>
-      <% if @owned_animals.include?(animal) %>
-        <div data-controller="modal">
-          <div data-action="click->modal#show">
-            <% cache [animal, 'v1'] do %>
-              <%= render 'owned_animal', animal: animal %>
-            <% end %>
-          </div>
-          <div class="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none" data-modal-target="overlay">
-            <!-- Dark overlay -->
-            <div class="absolute inset-0 bg-black opacity-75" data-action="click->modal#hide"></div>
-            <!-- Modal content -->
-            <div data-modal-target="content"
-                class="relative bg-white rounded-lg transform transition-all duration-300 scale-95">
-                <% cache [animal, 'v1'] do %>
-                  <%= render 'owned_animal', animal: animal %>
-                <% end %>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mb-12">
+      <% animals.each do |animal| %>
+        <% if @owned_animals.include?(animal) %>
+          <div data-controller="modal">
+            <div data-action="click->modal#show">
+              <turbo-frame id="owned_animal_<%= animal.id %>">
+                <%= render 'owned_animal', animal: animal %>
+              </turbo-frame>
+            </div>
+            <div class="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none" data-modal-target="overlay">
+              <!-- Dark overlay -->
+              <div class="absolute inset-0 bg-black opacity-75" data-action="click->modal#hide"></div>
+              <!-- Modal content -->
+              <div data-modal-target="content"
+                  class="relative bg-white rounded-lg transform transition-all duration-300 scale-95">
+                  <turbo-frame id="owned_animal_modal_<%= animal.id %>">
+                    <%= render 'owned_animal', animal: animal %>
+                  </turbo-frame>
+              </div>
             </div>
           </div>
-        </div>
-      <% else %>
-        <% cache [animal, 'v1', 'unowned'] do %>
-          <%= render 'unowned_animal', animal: animal %>
+        <% else %>
+          <turbo-frame id="unowned_animal_<%= animal.id %>">
+            <%= render 'unowned_animal', animal: animal %>
+          </turbo-frame>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
 </div>
