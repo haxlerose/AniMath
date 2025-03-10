@@ -1,11 +1,13 @@
 Name,Level,Habitat,Group
 aardvark,4,land,mammal
+adder,7,land,reptile
 albatross,4,air,bird
 alligator,5,land,reptile
 allosaurus,4,land,reptile
 alpaca,4,land,mammal
 anaconda,5,land,reptile
 anchovy,2,sea,fish
+angelfish,7,sea,fish
 ankylosaurus,4,land,reptile
 ant,1,land,insect
 anteater,3,land,mammal
@@ -31,6 +33,7 @@ bison,5,land,mammal
 blackbird,1,air,bird
 bluebird,2,air,bird
 bluegill,3,sea,fish
+boa,7,land,reptile
 boar,3,land,mammal
 bobcat,2,land,mammal
 bonobo,5,land,mammal
@@ -61,6 +64,8 @@ chimpanzee,5,land,mammal
 chinchilla,4,land,mammal
 chipmunk,1,land,mammal
 cicada,3,land,insect
+clownfish,7,sea,fish
+clydesdale,7,land,mammal
 cobra,5,land,reptile
 cockroach,2,land,insect
 cod,2,sea,fish
@@ -68,6 +73,7 @@ condor,4,air,bird
 cougar,5,land,mammal
 cow,1,land,mammal
 coyote,3,land,mammal
+crab,7,sea,fish
 crane,4,air,bird
 cricket,2,land,insect
 crocodile,3,land,reptile
@@ -88,6 +94,7 @@ dragon,6,land,reptile
 dragonite,6,air,reptile
 dragonfly,4,land,insect
 duck,3,air,bird
+dugong,7,sea,mammal
 dormouse,3,land,mammal
 eagle,4,air,bird
 earwig,3,land,insect
@@ -97,6 +104,7 @@ egret,4,air,bird
 elephant,5,land,mammal
 elk,4,land,mammal
 emu,4,land,bird
+ermine,7,land,mammal
 falcon,5,air,bird
 fairy,6,air,insect
 ferret,4,land,mammal
@@ -140,12 +148,14 @@ hedgehog,1,land,mammal
 heron,4,air,bird
 herring,2,air,fish
 hippo,5,land,mammal
+hornbill,7,air,bird
 hornet,2,air,insect
 horse,1,land,mammal
 hound,2,land,mammal
 hummingbird,5,air,bird
 husky,3,land,mammal
 hyena,1,land,mammal
+hyrax,7,land,mammal
 ibex,4,land,mammal
 ibis,3,land,bird
 iguana,2,land,reptile
@@ -170,6 +180,7 @@ lemming,2,land,mammal
 lemur,5,land,mammal
 leopard,5,land,mammal
 lion,3,land,mammal
+lionfish,7,sea,fish
 lizard,1,land,reptile
 llama,1,land,mammal
 lobster,1,sea,fish
@@ -184,8 +195,10 @@ mallard,3,air,bird
 mamba,4,land,reptile
 mammoth,5,land,mammal
 manatee,4,sea,mammal
+mantis,7,land,insect
 marlin,4,sea,fish
 marmot,3,land,mammal
+marten,7,land,mammal
 mastiff,4,land,mammal
 mayfly,2,air,insect
 meerkat,5,land,mammal
@@ -209,6 +222,7 @@ newt,1,land,amphibian
 nighthawk,3,air,bird
 nightingale,4,air,bird
 numbat,4,land,mammal
+nutria,7,land,mammal
 nyala,3,land,mammal
 octopus,2,sea,fish
 okapi,4,land,mammal
@@ -236,6 +250,7 @@ pheasant,1,air,bird
 phoenix,6,air,bird
 pig,1,land,mammal
 pigeon,2,air,bird
+pika,7,land,mammal
 pikachu,6,land,mammal
 pike,3,sea,fish
 piranha,4,sea,fish
@@ -244,6 +259,7 @@ pony,2,land,mammal
 porcupine,1,land,mammal
 porpoise,4,sea,mammal
 prawn,2,sea,fish
+pronghorn,7,land,mammal
 psyduck,6,air,bird
 pteranodon,4,air,reptile
 puffin,4,air,bird
@@ -263,6 +279,7 @@ roadrunner,4,land,bird
 robin,3,air,bird
 rooster,3,land,bird
 rhea,3,land,bird
+salamander,7,land,amphibian
 salmon,4,sea,fish
 sardine,2,sea,fish
 scallop,2,sea,fish
@@ -274,6 +291,8 @@ shark,4,sea,fish
 sheep,1,land,mammal
 shrew,2,land,mammal
 shrimp,3,sea,fish
+siamang,7,land,mammal
+skink,7,land,reptile
 skunk,3,land,mammal
 sloth,1,land,mammal
 snake,1,land,reptile
@@ -292,6 +311,7 @@ sturgeon,3,sea,fish
 swallow,1,air,bird
 swan,4,land,bird
 swordfish,4,sea,fish
+tamarin,4,land,mammal
 tapir,4,land,mammal
 tarantula,5,land,arachnid
 termite,4,land,insect
@@ -300,15 +320,13 @@ tick,1,land,arachnid
 tiger,3,land,mammal
 toad,3,land,amphibian
 toucan,5,air,bird
+tortoise,5,land,reptile
+triceratops,5,land,reptile
 trout,3,sea,fish
+tuatara,4,land,reptile
 tuna,3,sea,fish
 turkey,3,land,bird
 turtle,5,land,reptile
-tortoise,5,land,reptile
-toucan,4,air,bird
-tamarin,4,land,mammal
-triceratops,5,land,reptile
-tuatara,4,land,reptile
 tyrannosaurus,5,land,reptile
 unicorn,6,land,mammal
 velociraptor,5,land,reptile

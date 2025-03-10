@@ -10,10 +10,13 @@ class PuzzleGenerator
     return unless animal
 
     level = animal.level
+    sum = 0
+    while sum < level * 2
+      addend1 = rand(1..level + 2)
+      addend2 = rand(1..level + 2)
+      sum = addend1 + addend2
+    end
 
-    addend1 = rand(1..level + 2)
-    addend2 = rand(1..level + 2)
-    sum = addend1 + addend2
     { addend1:, addend2:, sum:, answers: answers(sum) }
   end
 
@@ -22,7 +25,8 @@ class PuzzleGenerator
   def answers(sum)
     answers = [sum]
     while answers.size < 3
-      wrong_answer = rand(1..sum + 5)
+      lower_bound = sum < 3 ? 1 : (sum - 2)
+      wrong_answer = rand(lower_bound..sum + 3)
       answers << wrong_answer if answers.exclude?(wrong_answer)
     end
     answers.shuffle
