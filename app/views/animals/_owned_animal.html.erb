@@ -6,7 +6,7 @@
     <%= image_tag "animals/placeholder.webp", alt: "Image not available", loading: 'lazy', decoding: 'async', class: 'rounded-lg grayscale opacity-50' %>
   <% end %>
   <div class="flex justify-between mt-4">
-    <%= image_tag "svg/#{animal.habitat}.svg", size: '48' %>
-    <%= image_tag "svg/#{animal.group}.svg", size: '48' %>
+    <%= image_tag "svg/#{animal.habitat}.svg", size: '48', loading: 'lazy', decoding: 'async' %>
+    <%= image_tag "svg/#{animal.group}.svg", size: '48', loading: 'lazy', decoding: 'async' %>
   </div>
 </div>
