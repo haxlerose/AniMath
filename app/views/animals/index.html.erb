@@ -11,7 +11,9 @@
       <% if @owned_animals.include?(animal) %>
         <div data-controller="modal">
           <div data-action="click->modal#show">
-            <%= render 'owned_animal', animal: %>
+            <% cache [animal, 'v1'] do %>
+              <%= render 'owned_animal', animal: animal %>
+            <% end %>
           </div>
           <div class="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none" data-modal-target="overlay">
             <!-- Dark overlay -->
@@ -19,7 +21,9 @@
             <!-- Modal content -->
             <div data-modal-target="content"
                 class="relative bg-white rounded-lg transform transition-all duration-300 scale-95">
-                <%= render 'owned_animal', animal: %>
+                <% cache [animal, 'v1'] do %>
+                  <%= render 'owned_animal', animal: animal %>
+                <% end %>
             </div>
           </div>
         </div>
