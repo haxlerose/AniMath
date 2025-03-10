@@ -7,6 +7,8 @@ class PuzzleGenerator
 
   def generate
     animal = AnimalChooser.new(@game).choose
+    return unless animal
+
     level = animal.level
 
     addend1 = rand(1..level + 2)

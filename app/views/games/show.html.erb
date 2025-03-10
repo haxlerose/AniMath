@@ -1,40 +1,48 @@
-<%= form_with url: guess_path(@game), html: {
-    data: {
-      controller: "answer",
-      answer_correct_answer_value: @puzzle[:sum],
-      answer_target: "form",
-      answer_guess_value: 1
-    },
-    class: 'flex flex-col fade-in'
-  } do %>
-  <%= hidden_field_tag :sum, @puzzle[:sum] %>
-  <%= hidden_field_tag :game_id, @game.id %>
-  <%= hidden_field_tag :animal_id, @animal.id %>
+<% if @animal %>
+  <%= form_with url: guess_path(@game), html: {
+      data: {
+        controller: "answer",
+        answer_correct_answer_value: @puzzle[:sum],
+        answer_target: "form",
+        answer_guess_value: 1
+      },
+      class: 'flex flex-col fade-in'
+    } do %>
+    <%= hidden_field_tag :sum, @puzzle[:sum] %>
+    <%= hidden_field_tag :game_id, @game.id %>
+    <%= hidden_field_tag :animal_id, @animal.id %>
 
-  <div class="flex mb-2">
-    <% @animal.level.times do %>
-      <%= image_tag "svg/star.svg", size: '48' %>
-    <% end %>
-  </div>
+    <div class="flex mb-2">
+      <% @animal.level.times do %>
+        <%= image_tag "svg/star.svg", size: '48' %>
+      <% end %>
+    </div>
 
-  <div class="animal-card" data-answer-target="animalCard">
-    <%= render 'animals/owned_animal', animal: @animal %>
-  </div>
+    <div class="animal-card" data-answer-target="animalCard">
+      <%= render 'animals/owned_animal', animal: @animal %>
+    </div>
 
-  <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-3 lg:mt-8 mb-3 lg:mb-6' %>
+    <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-3 lg:mt-8 mb-3 lg:mb-6' %>
 
-  <div class="flex flex-wrap gap-3 justify-center">
-    <% @puzzle[:answers].each do |answer| %>
-      <div class="relative">
-        <%= radio_button_tag :guess, answer, false,
-            class: "absolute opacity-0 w-full h-full cursor-pointer peer",
-            data: {
-              answer_target: "answer",
-              action: "change->answer#select"
-            } %>
-        <%= label_tag "guess_#{answer}", answer,
-            class: "block px-4 py-2 border border-4 rounded-full peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-700 peer-hover:bg-gray-100 cursor-pointer transition-colors text-2xl font-semibold shadow-lg" %>
-      </div>
-    <% end %>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <% @puzzle[:answers].each do |answer| %>
+        <div class="relative">
+          <%= radio_button_tag :guess, answer, false,
+              class: "absolute opacity-0 w-full h-full cursor-pointer peer",
+              data: {
+                answer_target: "answer",
+                action: "change->answer#select"
+              } %>
+          <%= label_tag "guess_#{answer}", answer,
+              class: "block px-4 py-2 border border-4 rounded-full peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-700 peer-hover:bg-gray-100 cursor-pointer transition-colors text-2xl font-semibold shadow-lg" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="flex flex-col items-center">
+    <h1 class="text-4xl font-bold text-center">Congratulations!</h1>
+    <p class="text-xl text-center">You have completed the game!</p>
+    <a href="<%= new_game_path %>" class="text-white font-bold text-2xl bg-gray-800 border py-2 px-4 rounded-lg mt-4">Play Again</a>
   </div>
 <% end %>
