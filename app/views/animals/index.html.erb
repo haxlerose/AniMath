@@ -27,8 +27,10 @@
             </div>
           </div>
         </div>
-    <% else %>
-        <%= render 'unowned_animal', animal: %>
+      <% else %>
+        <% cache [animal, 'v1', 'unowned'] do %>
+          <%= render 'unowned_animal', animal: animal %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
