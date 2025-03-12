@@ -2,11 +2,11 @@
   <% @animals.each do |level, animals| %>
     <div class="flex mb-4">
       <% level.times do %>
-        <%= image_tag "svg/star.svg", size: '36' %>
+        <%= image_tag "svg/star.svg", size: '40' %>
       <% end %>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mb-12">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
       <% animals.each do |animal| %>
         <% if @owned_animals.include?(animal) %>
           <%= render 'owned_animal', animal: animal %>

@@ -1,5 +1,5 @@
 <div class="block max-w-sm p-2 md:p-6 bg-white border border-2 border-gray-500 rounded-lg shadow-md">
-  <h5 class="mb-2 text-sm lg:text-2xl font-bold tracking-tight text-gray-900 justify-self-center"><%= animal.name.gsub('_', ' ').titleize %></h5>
+  <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 justify-self-center"><%= animal.name.gsub('_', ' ').titleize %></h5>
   <% if File.exist?(Rails.root.join("app/assets/images/animals/#{animal.name.downcase}.webp")) %>
     <%= image_tag "animals/#{animal.name.downcase}.webp", alt: "#{animal.name} image", loading: 'lazy', decoding: 'async', class: 'rounded-lg' %>
   <% else %>

@@ -1,5 +1,5 @@
 <div class="block max-w-sm p-2 md:p-6 bg-white border border-2 border-gray-300 rounded-lg shadow-md">
-  <h5 class="mb-2 text-sm lg:text-2xl font-bold tracking-tight text-gray-300 justify-self-center"><%= animal.name.titleize %></h5>
+  <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-300 justify-self-center"><%= animal.name.titleize %></h5>
   <% if File.exist?(Rails.root.join("app/assets/images/#{animal_path(animal)}")) %>
     <%= image_tag animal_path(animal), alt: "#{animal.name} image", loading: 'lazy', decoding: 'async', class: "rounded-lg grayscale opacity-20" %>
   <% else %>
