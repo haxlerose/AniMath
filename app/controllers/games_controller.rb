@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class GamesController < ApplicationController
+  before_action :set_game, only: %i[show guess]
   def index; end
 
   def new
@@ -8,7 +9,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
     return redirect_to root_path unless @game
 
     @animal = AnimalChooser.new(@game).choose
@@ -32,18 +32,19 @@ class GamesController < ApplicationController
   end
 
   def guess
-    @game = Game.find(params[:game_id])
     @animal = Animal.find(params[:animal_id])
     return redirect_to root_path unless @game && @animal
 
-    guess = params[:guess]
-    sum = params[:sum]
-    @game.animals << @animal if sum.to_i == guess.to_i
+    @game.animals << @animal if params[:sum].to_i == params[:guess].to_i
 
     redirect_to game_path(@game)
   end
 
   private
+
+  def set_game
+    @game = Game.find(params[:id])
+  end
 
   def game_params
     params.require(:game).permit(:name)
