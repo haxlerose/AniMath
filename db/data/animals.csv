@@ -81,7 +81,9 @@ crow,1,air,bird
 cuckoo,2,air,bird
 dachshund,4,land,mammal
 dalmatian,4,land,mammal
+deep_dragon,7,land,reptile
 deer,1,land,mammal
+desert_dragon,7,land,reptile
 dimetrodon,3,land,reptile
 dingo,3,land,mammal
 diplodocus,4,land,reptile
@@ -97,6 +99,7 @@ duck,3,air,bird
 dugong,7,sea,mammal
 dormouse,3,land,mammal
 eagle,4,air,bird
+earth_dragon,7,land,reptile
 earwig,3,land,insect
 eel,3,sea,fish
 eevee,6,land,mammal
@@ -109,6 +112,7 @@ falcon,5,air,bird
 fairy,6,air,insect
 ferret,4,land,mammal
 finch,3,air,bird
+fire_dragon,7,land,reptile
 firefly,5,air,insect
 flamingo,1,land,bird
 flea,2,land,insect
@@ -116,6 +120,7 @@ flounder,2,sea,fish
 fly,5,air,insect
 fox,5,land,mammal
 frog,1,land,amphibian
+fungus_dragon,7,land,reptile
 gadfly,1,air,insect
 gallimimus,3,land,reptile
 gazelle,1,land,mammal
@@ -214,6 +219,7 @@ monkey,2,land,mammal
 moose,5,land,mammal
 mosquito,1,air,insect
 moth,2,air,insect
+mountain_dragon,7,land,reptile
 mouse,1,land,mammal
 mule,3,land,mammal
 muskrat,2,land,mammal
@@ -224,6 +230,7 @@ nightingale,4,air,bird
 numbat,4,land,mammal
 nutria,7,land,mammal
 nyala,3,land,mammal
+ocean_dragon,7,sea,reptile
 octopus,2,sea,fish
 okapi,4,land,mammal
 opossum,3,land,mammal
@@ -254,6 +261,7 @@ pika,7,land,mammal
 pikachu,6,land,mammal
 pike,3,sea,fish
 piranha,4,sea,fish
+plant_dragon,7,land,reptile
 platypus,5,land,mammal
 pony,2,land,mammal
 porcupine,1,land,mammal
@@ -297,6 +305,7 @@ skunk,3,land,mammal
 sloth,1,land,mammal
 snake,1,land,reptile
 snorlax,6,land,mammal
+space_dragon,7,air,reptile
 sparrow,1,air,bird
 spider,1,land,arachnid
 spinosaurus,5,land,reptile
@@ -336,10 +345,12 @@ wallaby,1,land,mammal
 walrus,1,sea,mammal
 warthog,2,land,mammal
 wasp,2,air,insect
+water_dragon,7,sea,reptile
 weasel,3,land,mammal
 whale,2,sea,mammal
 wildcat,4,land,mammal
 wildebeest,3,land,mammal
+wind_dragon,7,air,reptile
 wolf,5,land,mammal
 wolverine,5,land,mammal
 wombat,4,land,mammal
