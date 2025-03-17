@@ -14,6 +14,7 @@ anteater,3,land,mammal
 antelope,4,land,mammal
 aphid,1,air,insect
 archaeopteryx,4,land,bird
+arctic_fox,7,land,mammal
 armadillo,2,land,mammal
 asp,3,land,reptile
 axolotl,5,land,amphibian
@@ -31,12 +32,15 @@ bee,1,air,insect
 beetle,2,land,insect
 bison,5,land,mammal
 blackbird,1,air,bird
+black_mamba,4,land,reptile
+black_widow,5,land,arachnid
 bluebird,2,air,bird
 bluegill,3,sea,fish
 boa,7,land,reptile
 boar,3,land,mammal
 bobcat,2,land,mammal
 bonobo,5,land,mammal
+box_turtle,4,land,reptile
 brachiosaurus,5,land,reptile
 buffalo,4,land,mammal
 bulbasaur,6,land,mammal
@@ -70,6 +74,8 @@ cobra,5,land,reptile
 cockroach,2,land,insect
 cod,2,sea,fish
 condor,4,air,bird
+copperhead,5,land,reptile
+coral_snake,3,land,reptile
 cougar,5,land,mammal
 cow,1,land,mammal
 coyote,3,land,mammal
@@ -80,7 +86,9 @@ crocodile,3,land,reptile
 crow,1,air,bird
 cuckoo,2,air,bird
 dachshund,4,land,mammal
+daddy_long_legs,2,land,arachnid
 dalmatian,4,land,mammal
+dart_frog,7,land,amphibian
 deep_dragon,7,land,reptile
 deer,1,land,mammal
 desert_dragon,7,land,reptile
@@ -173,6 +181,7 @@ jay,3,air,bird
 jellyfish,4,sea,fish
 jigglypuff,6,land,mammal
 kangaroo,5,land,mammal
+king_cobra,7,land,reptile
 kingfisher,4,air,bird
 kiwi,1,land,bird
 koala,5,land,mammal
@@ -264,6 +273,7 @@ pike,3,sea,fish
 piranha,4,sea,fish
 plant_dragon,7,land,reptile
 platypus,5,land,mammal
+polar_bear,7,land,mammal
 pony,2,land,mammal
 porcupine,1,land,mammal
 porpoise,4,sea,mammal
@@ -282,6 +292,7 @@ rat,1,land,mammal
 rattlesnake,5,land,reptile
 raven,1,air,bird
 ray,3,sea,fish
+red_panda,3,land,mammal
 reindeer,4,land,mammal
 rhinoceros,2,land,mammal
 roadrunner,4,land,bird
@@ -296,15 +307,18 @@ scorpion,4,land,arachnid
 seagull,2,air,bird
 seahorse,5,sea,fish
 seal,5,sea,mammal
+sea_turtle,5,sea,reptile
 shark,4,sea,fish
 sheep,1,land,mammal
 shrew,2,land,mammal
 shrimp,3,sea,fish
 siamang,7,land,mammal
+sidewinder,3,land,reptile
 skink,7,land,reptile
 skunk,3,land,mammal
 sloth,1,land,mammal
 snake,1,land,reptile
+snapping_turtle,7,land,reptile
 snorlax,6,land,mammal
 space_dragon,7,air,reptile
 sparrow,1,air,bird
@@ -331,6 +345,7 @@ tiger,3,land,mammal
 toad,3,land,amphibian
 toucan,5,air,bird
 tortoise,5,land,reptile
+tree_frog,5,land,amphibian
 triceratops,5,land,reptile
 trout,3,sea,fish
 tuatara,4,land,reptile
