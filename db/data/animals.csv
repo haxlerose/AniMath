@@ -109,6 +109,7 @@ dormouse,3,land,mammal
 eagle,4,air,bird
 earth_dragon,7,land,reptile
 earwig,3,land,insect
+echidna,5,land,mammal
 eel,3,sea,fish
 eevee,6,land,mammal
 egret,4,air,bird
@@ -358,6 +359,7 @@ velociraptor,5,land,reptile
 viper,4,land,reptile
 vulture,3,air,bird
 wallaby,1,land,mammal
+wallaroo,4,land,mammal
 walrus,1,sea,mammal
 warthog,2,land,mammal
 wasp,2,air,insect
