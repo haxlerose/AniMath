@@ -1,10 +1,10 @@
-# Math Zoo
+# AniMath
 
 A fun educational game that helps children practice addition while collecting animal cards.
 
 ## Overview
 
-Math Zoo is a Rails application that combines math practice with the excitement of collecting animals. Players create their own game and solve addition problems to collect animals of increasing difficulty levels. Each correct answer adds a new animal to the player's collection.
+AniMath is a Rails application that combines math practice with the excitement of collecting animals. Players create their own game and solve addition problems to collect animals of increasing difficulty levels. Each correct answer adds a new animal to the player's collection.
 
 ## Features
 
