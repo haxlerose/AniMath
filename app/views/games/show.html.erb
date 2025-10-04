@@ -22,7 +22,7 @@
       <%= render 'animals/owned_animal', animal: @animal %>
     </div>
 
-    <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-3 lg:mt-8 mb-3 lg:mb-6' %>
+    <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-2 lg:mt-4 mb-2 lg:mb-3' %>
 
     <div class="flex flex-wrap gap-3 justify-center">
       <% @puzzle[:answers].each do |answer| %>
