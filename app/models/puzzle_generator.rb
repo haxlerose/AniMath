@@ -24,7 +24,7 @@ class PuzzleGenerator
 
   def answers(sum)
     answers = [sum]
-    while answers.size < 3
+    while answers.size < 4
       lower_bound = sum < 3 ? 1 : (sum - 2)
       wrong_answer = rand(lower_bound..sum + 3)
       answers << wrong_answer if answers.exclude?(wrong_answer)
