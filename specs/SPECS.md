@@ -1,12 +1,12 @@
 # AniMath Game Specifications
 
-AniMath is an educational math game that combines addition practice with animal collecting. Players solve addition problems to earn animal cards and build their collection.
+AniMath is an educational math game that combines math practice with animal collecting. Players solve math problems to earn animal cards and build their collection.
 
 ---
 
 ## Game Overview
 
-Players create a game, then solve addition puzzles to collect animals. Each correct answer adds a new animal to the player's collection. The game progresses through increasing difficulty levels until all animals have been collected.
+Players create a game, then solve math puzzles to collect animals. Each correct answer adds a new animal to the player's collection. The game progresses through increasing difficulty levels until all animals have been collected.
 
 ---
 
@@ -33,7 +33,7 @@ Each round presents the player with:
 
 1. An **animal card** showing the animal they can earn
 2. A **difficulty rating** displayed as stars (1-7 stars)
-3. An **addition problem** (e.g., "5 + 3")
+3. A **math problem** (e.g., "5 + 3" or "8 − 3")
 4. **Four answer choices** to select from
 
 ### Answering
@@ -63,10 +63,20 @@ The game is complete when all animals in the database have been collected. A con
 - All Level 2 animals must be collected before Level 3 animals appear
 - This pattern continues through all 7 levels
 
+### Operation Progression
+
+The type of math problem changes as players advance:
+
+| Levels | Operation   | Description                           |
+|--------|-------------|---------------------------------------|
+| 1-3    | Addition    | Players start with addition problems  |
+| 4-7    | Subtraction | Subtraction unlocks at level 4        |
+
 ### Puzzle Difficulty Scaling
 
-- Higher-level animals have harder addition problems
+- Higher-level animals have harder math problems
 - The numbers in the puzzles increase as the animal level increases
+- Subtraction problems always have non-negative results (larger number minus smaller)
 - Wrong answer choices are always close to the correct answer to provide challenge
 
 ---

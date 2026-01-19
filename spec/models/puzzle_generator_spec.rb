@@ -82,7 +82,7 @@ RSpec.describe PuzzleGenerator do
         correct_result = result[:result]
         wrong_answers = result[:answers] - [correct_result]
 
-        lower_bound = correct_result < 3 ? 1 : (correct_result - 2)
+        lower_bound = [correct_result - 2, 0].max  # Floor at 0, never negative
         upper_bound = correct_result + 3
 
         wrong_answers.each do |answer|
@@ -231,7 +231,7 @@ RSpec.describe PuzzleGenerator do
           correct_result = result[:result]
           wrong_answers = result[:answers] - [correct_result]
 
-          lower_bound = correct_result < 3 ? 1 : (correct_result - 2)
+          lower_bound = [correct_result - 2, 0].max  # Floor at 0, never negative
           upper_bound = correct_result + 3
 
           wrong_answers.each do |answer|
