@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class PuzzleGenerator
+  ADDITION_RANGES = {
+    1 => { max: 5, min_sum: 2 },
+    2 => { max: 7, min_sum: 4 },
+    3 => { max: 9, min_sum: 6 }
+  }.freeze
+
   SUBTRACTION_RANGES = {
     4 => { max: 6, min_diff: 1 },
     5 => { max: 8, min_diff: 2 },
@@ -23,10 +29,11 @@ class PuzzleGenerator
   private
 
   def generate_addition(level)
+    config = ADDITION_RANGES[level]
     result = 0
-    while result < level * 2
-      num1 = rand(1..level + 2)
-      num2 = rand(1..level + 2)
+    while result < config[:min_sum]
+      num1 = rand(1..config[:max])
+      num2 = rand(1..config[:max])
       result = num1 + num2
     end
 

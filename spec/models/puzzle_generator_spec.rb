@@ -51,10 +51,6 @@ RSpec.describe PuzzleGenerator do
         expect(result[:result]).to eq(result[:num1] + result[:num2])
       end
 
-      it 'ensures result is at least twice the animal level' do
-        result = subject.generate
-        expect(result[:result]).to be >= (animal.level * 2)
-      end
 
       it 'includes the correct result in the answers' do
         result = subject.generate
@@ -71,10 +67,21 @@ RSpec.describe PuzzleGenerator do
         expect(result[:answers].uniq.size).to eq(4)
       end
 
-      it 'ensures num1 and num2 are within expected range' do
-        result = subject.generate
-        expect(result[:num1]).to be_between(1, animal.level + 2)
-        expect(result[:num2]).to be_between(1, animal.level + 2)
+      it 'ensures num1 and num2 are within expected range for level 3' do
+        # Level 3: max 9
+        10.times do
+          result = subject.generate
+          expect(result[:num1]).to be_between(1, 9)
+          expect(result[:num2]).to be_between(1, 9)
+        end
+      end
+
+      it 'ensures result meets minimum sum for level 3' do
+        # Level 3: min_sum 6
+        10.times do
+          result = subject.generate
+          expect(result[:result]).to be >= 6
+        end
       end
 
       it 'ensures wrong answers are within expected range' do
@@ -207,6 +214,40 @@ RSpec.describe PuzzleGenerator do
     end
   end
 
+  context 'addition level 1' do
+    let(:animal) { instance_double('Animal', level: 1) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'uses max of 5 and min_sum of 2' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 5)
+        expect(result[:num2]).to be_between(1, 5)
+        expect(result[:result]).to be >= 2
+      end
+    end
+  end
+
+  context 'addition level 2' do
+    let(:animal) { instance_double('Animal', level: 2) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'uses max of 7 and min_sum of 4' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 7)
+        expect(result[:num2]).to be_between(1, 7)
+        expect(result[:result]).to be >= 4
+      end
+    end
+  end
+
   context 'edge cases' do
     context 'when result is less than 3' do
       let(:animal) { instance_double('Animal', level: 1) }
@@ -248,15 +289,16 @@ RSpec.describe PuzzleGenerator do
         allow(animal_chooser).to receive(:choose).and_return(animal)
       end
 
-      it 'ensures the result is at least twice the animal level' do
+      it 'ensures the puzzle meets level 3 requirements' do
         result = subject.generate
 
-        expect(result[:result]).to be >= (animal.level * 2)
+        # Level 3: min_sum 6, max 9
+        expect(result[:result]).to be >= 6
         expect(result[:num1] + result[:num2]).to eq(result[:result])
 
-        # Verify num1 and num2 are within expected range
-        expect(result[:num1]).to be_between(1, animal.level + 2)
-        expect(result[:num2]).to be_between(1, animal.level + 2)
+        # Verify num1 and num2 are within expected range for level 3
+        expect(result[:num1]).to be_between(1, 9)
+        expect(result[:num2]).to be_between(1, 9)
 
         # Verify answers include the correct result
         expect(result[:answers]).to include(result[:result])
