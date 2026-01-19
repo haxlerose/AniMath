@@ -92,6 +92,121 @@ RSpec.describe PuzzleGenerator do
     end
   end
 
+  context 'when animal is level 4-7 (subtraction)' do
+    let(:animal) { instance_double('Animal', level: 5) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'returns a hash with the correct keys' do
+      result = subject.generate
+      expect(result).to include(:num1, :num2, :result, :operation, :answers)
+    end
+
+    it 'returns :subtraction as the operation' do
+      result = subject.generate
+      expect(result[:operation]).to eq(:subtraction)
+    end
+
+    it 'ensures num1 >= num2 (no negative results)' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be >= result[:num2]
+      end
+    end
+
+    it 'ensures result equals num1 - num2' do
+      result = subject.generate
+      expect(result[:result]).to eq(result[:num1] - result[:num2])
+    end
+
+    it 'ensures result meets minimum difference for level' do
+      # Level 4: min_diff 1, Level 5: min_diff 2, Level 6: min_diff 3, Level 7: min_diff 4
+      10.times do
+        result = subject.generate
+        min_diff = animal.level - 3 # Level 4→1, 5→2, 6→3, 7→4
+        expect(result[:result]).to be >= min_diff
+      end
+    end
+
+    it 'returns 4 unique answers including the correct result' do
+      result = subject.generate
+      expect(result[:answers].size).to eq(4)
+      expect(result[:answers].uniq.size).to eq(4)
+      expect(result[:answers]).to include(result[:result])
+    end
+
+    it 'ensures wrong answers are never negative' do
+      10.times do
+        result = subject.generate
+        result[:answers].each do |answer|
+          expect(answer).to be >= 0
+        end
+      end
+    end
+
+    it 'ensures num1 and num2 are within expected range for level 5' do
+      # Level 5: max 8
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 8)
+        expect(result[:num2]).to be_between(1, 8)
+      end
+    end
+  end
+
+  context 'subtraction level 4' do
+    let(:animal) { instance_double('Animal', level: 4) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'uses max of 6 and min_diff of 1' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 6)
+        expect(result[:num2]).to be_between(1, 6)
+        expect(result[:result]).to be >= 1
+      end
+    end
+  end
+
+  context 'subtraction level 6' do
+    let(:animal) { instance_double('Animal', level: 6) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'uses max of 10 and min_diff of 3' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 10)
+        expect(result[:num2]).to be_between(1, 10)
+        expect(result[:result]).to be >= 3
+      end
+    end
+  end
+
+  context 'subtraction level 7' do
+    let(:animal) { instance_double('Animal', level: 7) }
+
+    before do
+      allow(animal_chooser).to receive(:choose).and_return(animal)
+    end
+
+    it 'uses max of 12 and min_diff of 4' do
+      10.times do
+        result = subject.generate
+        expect(result[:num1]).to be_between(1, 12)
+        expect(result[:num2]).to be_between(1, 12)
+        expect(result[:result]).to be >= 4
+      end
+    end
+  end
+
   context 'edge cases' do
     context 'when result is less than 3' do
       let(:animal) { instance_double('Animal', level: 1) }
