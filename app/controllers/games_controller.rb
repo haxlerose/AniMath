@@ -35,7 +35,7 @@ class GamesController < ApplicationController
     @animal = Animal.find(params[:animal_id])
     return redirect_to root_path unless @game && @animal
 
-    @game.animals << @animal if params[:sum].to_i == params[:guess].to_i
+    @game.animals << @animal if params[:result].to_i == params[:guess].to_i
 
     redirect_to game_path(@game)
   end

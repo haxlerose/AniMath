@@ -2,13 +2,13 @@
   <%= form_with url: guess_path(@game), html: {
       data: {
         controller: "answer",
-        answer_correct_answer_value: @puzzle[:sum],
+        answer_correct_answer_value: @puzzle[:result],
         answer_target: "form",
         answer_guess_value: 1
       },
       class: 'flex flex-col fade-in'
     } do %>
-    <%= hidden_field_tag :sum, @puzzle[:sum] %>
+    <%= hidden_field_tag :result, @puzzle[:result] %>
     <%= hidden_field_tag :game_id, @game.id %>
     <%= hidden_field_tag :animal_id, @animal.id %>
 
@@ -22,7 +22,7 @@
       <%= render 'animals/owned_animal', animal: @animal %>
     </div>
 
-    <%= tag.div "#{@puzzle[:addend1]} + #{@puzzle[:addend2]}", class: 'self-center text-4xl font-semibold mt-2 lg:mt-4 mb-2 lg:mb-3' %>
+    <%= tag.div "#{@puzzle[:num1]} #{@puzzle[:operation] == :addition ? '+' : '−'} #{@puzzle[:num2]}", class: 'self-center text-4xl font-semibold mt-2 lg:mt-4 mb-2 lg:mb-3' %>
 
     <div class="flex flex-wrap gap-3 justify-center">
       <% @puzzle[:answers].each do |answer| %>

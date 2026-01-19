@@ -38,22 +38,27 @@ RSpec.describe PuzzleGenerator do
 
       it 'returns a hash with the correct keys' do
         result = subject.generate
-        expect(result).to include(:addend1, :addend2, :sum, :answers)
+        expect(result).to include(:num1, :num2, :result, :operation, :answers)
       end
 
-      it 'ensures sum is equal to addend1 + addend2' do
+      it 'returns :addition as the operation for levels 1-3' do
         result = subject.generate
-        expect(result[:sum]).to eq(result[:addend1] + result[:addend2])
+        expect(result[:operation]).to eq(:addition)
       end
 
-      it 'ensures sum is at least twice the animal level' do
+      it 'ensures result is equal to num1 + num2' do
         result = subject.generate
-        expect(result[:sum]).to be >= (animal.level * 2)
+        expect(result[:result]).to eq(result[:num1] + result[:num2])
       end
 
-      it 'includes the correct sum in the answers' do
+      it 'ensures result is at least twice the animal level' do
         result = subject.generate
-        expect(result[:answers]).to include(result[:sum])
+        expect(result[:result]).to be >= (animal.level * 2)
+      end
+
+      it 'includes the correct result in the answers' do
+        result = subject.generate
+        expect(result[:answers]).to include(result[:result])
       end
 
       it 'returns 4 possible answers' do
@@ -66,19 +71,19 @@ RSpec.describe PuzzleGenerator do
         expect(result[:answers].uniq.size).to eq(4)
       end
 
-      it 'ensures addends are within expected range' do
+      it 'ensures num1 and num2 are within expected range' do
         result = subject.generate
-        expect(result[:addend1]).to be_between(1, animal.level + 2)
-        expect(result[:addend2]).to be_between(1, animal.level + 2)
+        expect(result[:num1]).to be_between(1, animal.level + 2)
+        expect(result[:num2]).to be_between(1, animal.level + 2)
       end
 
       it 'ensures wrong answers are within expected range' do
         result = subject.generate
-        correct_sum = result[:sum]
-        wrong_answers = result[:answers] - [correct_sum]
+        correct_result = result[:result]
+        wrong_answers = result[:answers] - [correct_result]
 
-        lower_bound = correct_sum < 3 ? 1 : (correct_sum - 2)
-        upper_bound = correct_sum + 3
+        lower_bound = correct_result < 3 ? 1 : (correct_result - 2)
+        upper_bound = correct_result + 3
 
         wrong_answers.each do |answer|
           expect(answer).to be_between(lower_bound, upper_bound)
@@ -88,31 +93,31 @@ RSpec.describe PuzzleGenerator do
   end
 
   context 'edge cases' do
-    context 'when sum is less than 3' do
+    context 'when result is less than 3' do
       let(:animal) { instance_double('Animal', level: 1) }
 
       before do
         allow(animal_chooser).to receive(:choose).and_return(animal)
       end
 
-      it 'generates 4 unique answers even for low sums' do
+      it 'generates 4 unique answers even for low results' do
         # Run multiple times to account for randomness
         10.times do
           result = subject.generate
           expect(result[:answers].size).to eq(4)
           expect(result[:answers].uniq.size).to eq(4)
-          expect(result[:answers]).to include(result[:sum])
+          expect(result[:answers]).to include(result[:result])
         end
       end
 
-      it 'keeps wrong answers within valid range for low sums' do
+      it 'keeps wrong answers within valid range for low results' do
         10.times do
           result = subject.generate
-          correct_sum = result[:sum]
-          wrong_answers = result[:answers] - [correct_sum]
+          correct_result = result[:result]
+          wrong_answers = result[:answers] - [correct_result]
 
-          lower_bound = correct_sum < 3 ? 1 : (correct_sum - 2)
-          upper_bound = correct_sum + 3
+          lower_bound = correct_result < 3 ? 1 : (correct_result - 2)
+          upper_bound = correct_result + 3
 
           wrong_answers.each do |answer|
             expect(answer).to be_between(lower_bound, upper_bound)
@@ -121,25 +126,25 @@ RSpec.describe PuzzleGenerator do
       end
     end
 
-    context 'when generating a puzzle with required sum' do
+    context 'when generating a puzzle with required result' do
       let(:animal) { instance_double('Animal', level: 3) }
 
       before do
         allow(animal_chooser).to receive(:choose).and_return(animal)
       end
 
-      it 'ensures the sum is at least twice the animal level' do
+      it 'ensures the result is at least twice the animal level' do
         result = subject.generate
 
-        expect(result[:sum]).to be >= (animal.level * 2)
-        expect(result[:addend1] + result[:addend2]).to eq(result[:sum])
+        expect(result[:result]).to be >= (animal.level * 2)
+        expect(result[:num1] + result[:num2]).to eq(result[:result])
 
-        # Verify addends are within expected range
-        expect(result[:addend1]).to be_between(1, animal.level + 2)
-        expect(result[:addend2]).to be_between(1, animal.level + 2)
+        # Verify num1 and num2 are within expected range
+        expect(result[:num1]).to be_between(1, animal.level + 2)
+        expect(result[:num2]).to be_between(1, animal.level + 2)
 
-        # Verify answers include the correct sum
-        expect(result[:answers]).to include(result[:sum])
+        # Verify answers include the correct result
+        expect(result[:answers]).to include(result[:result])
 
         # Verify we have the right number of answers
         expect(result[:answers].size).to eq(4)
