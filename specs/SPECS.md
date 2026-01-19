@@ -34,11 +34,11 @@ Each round presents the player with:
 1. An **animal card** showing the animal they can earn
 2. A **difficulty rating** displayed as stars (1-7 stars)
 3. An **addition problem** (e.g., "5 + 3")
-4. **Three answer choices** to select from
+4. **Four answer choices** to select from
 
 ### Answering
 
-- Players select one of the three answer options
+- Players select one of the four answer options
 - **Correct answer**: The animal is added to the collection, and the next puzzle appears
 - **Incorrect answer**: The player may try again (up to 2 attempts per puzzle)
 - After 2 incorrect attempts, the correct answer is revealed and the game advances to the next puzzle (animal is not collected)
